@@ -1,80 +1,285 @@
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  margin: 0;
-  color: #333;
+.ayurveda-title,
+.profile-name,
+.sanskrit-saying {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.4rem;
+  color: #4E397F;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  letter-spacing: 2px;
 }
-header {
-  background: #f76b1c;
-  color: white;
-  text-align: center;
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   padding: 2rem 0 1rem 0;
-  border-radius: 0 0 40px 40px;
 }
-header h1 {
-  margin: 0 0 10px 0;
-  font-size: 2.5rem;
-  letter-spacing:2px;
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #B8E3FF;
+  background: #fff;
 }
-nav a {
-  margin: 0 12px;
-  color: #fff;
+
+.profile-name {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  color: #4E397F;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #67B6B6;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.sanskrit-saying {
+  font-size: 1.2rem;
+  color: #67B6B6;
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+}
+
+.sanskrit-note {
+  font-size: 1rem;
+  color: #888;
+  margin-left: 8px;
+}
+
+.social-links {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1.3rem;
+}
+.social-links a {
+  color: #4E397F;
+  background: #F8C8DC;
+  padding: 6px 18px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: background 0.2s;
+  border: 1px solid #E6DAF8;
+}
+.social-links a:hover {
+  background: #B8E3FF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #F8C8DC 0%, #B8E3FF 50%, #F9F6C8 100%);
+  color: #444;
+}
+
+/* Yan Menü */
+aside.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 175px;
+  height: 100%;
+  background: #8CD5C8;
+  padding-top: 2rem;
+  box-shadow: 2px 0 14px rgba(80,120,160,0.11);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  padding-left: 2rem;
+}
+
+.sidebar nav a {
+  color: #4E397F;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
   transition: color 0.2s;
+  letter-spacing: 1px;
 }
-nav a:hover {
-  color: #ffe082;
+
+.sidebar nav a:hover {
+  color: #FD90B4;
 }
-section {
-  background: rgba(255,255,255,0.8);
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 700px;
-  box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+
+main {
+  margin-left: 175px;
+  padding: 0 2vw;
 }
-section h2 {
-  color: #f76b1c;
-  margin-top:0;
+
+.grid-section,
+.about-section,
+.contact-section {
+  margin: 2.5rem auto;
+  max-width: 980px;
 }
-ul {
-  padding-left: 20px;
+
+.grid-section h2,
+.about-section h2,
+.contact-section h2 {
+  color: #67B6B6;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1px;
 }
-article {
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #fcb69f;
-  padding-bottom: 1rem;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
 }
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 24px rgba(120,120,140,0.07);
+  padding: 1.2rem 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card:hover {
+  box-shadow: 0 6px 32px rgba(160,120,160,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #4E397F;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.card p {
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Pastel renk temaları */
+.card-pink { background: #F8C8DC; }
+.card-blue { background: #B8E3FF; }
+.card-mint { background: #C8F7F2; }
+.card-yellow { background: #F9F6C8; }
+.card-lilac { background: #E6DAF8; }
+.card-green { background: #D7F8C8; }
+
+.about-section,
+.contact-section {
+  background: #f7fcfa;
+  border-radius: 18px;
+  box-shadow: 0 2px 14px rgba(120,110,140,0.09);
+  padding: 2rem 1.5rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
 }
+
 form input, form textarea {
-  margin-bottom: 1rem;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #fcb69f;
   font-size: 1rem;
+  border: 1px solid #B8E3FF;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  resize: vertical;
 }
+
+form input:focus,
+form textarea:focus {
+  border-color: #FD90B4;
+  outline: none;
+}
+
 form button {
-  background: #f76b1c;
+  background: linear-gradient(90deg, #8CD5C8 0%, #FD90B4 100%);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 14px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s;
+  font-weight: 500;
 }
+
 form button:hover {
-  background: #ffae42;
+  background: linear-gradient(90deg, #FD90B4 0%, #8CD5C8 100%);
 }
+
+#form-message {
+  margin-top: 1rem;
+  color: #4E397F;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #fcb69f;
-  color: white;
-  border-radius: 40px 40px 0 0;
-  margin-top: 2rem;
+  padding: 1.2rem;
+  background: #8CD5C8;
+  color: #4E397F;
+  border-radius: 32px 32px 0 0;
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  aside.sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 0.8rem 0;
+    box-shadow: none;
+    background: #8CD5C8;
+  }
+  .sidebar nav {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-left: 0;
+    justify-content: center;
+  }
+  main {
+    margin-left: 0;
+    padding: 0 5vw;
+  }
+  .main-header {
+    padding: 1.2rem 0.5rem;
+  }
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+  .profile-pic {
+    width: 90px;
+    height: 90px;
+  }
+  .grid-section, .about-section, .contact-section {
+    max-width: 98vw;
+    padding: 1.2rem 0.7rem;
+  }
+  .profile-name {
+    font-size: 1.6rem;
+  }
 }
