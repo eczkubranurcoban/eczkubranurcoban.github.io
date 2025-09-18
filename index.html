@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kübra Nur Çoban | Eczacı Portföyü</title>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <aside class="sidebar">
+    <nav>
+      <a href="#about">Hakkımda</a>
+      <a href="#experience">Deneyim</a>
+      <a href="#education">Eğitim</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </aside>
+  <main>
+    <header class="main-header">
+      <div class="profile-header">
+        <img src="profile.jpg" alt="Kübra Nur Çoban" class="profile-pic">
+        <div>
+          <h1 class="profile-name">Kübra Nur Çoban</h1>
+          <p class="tagline">Eczacı</p>
+          <p class="sanskrit-saying">“Aarogyam Paramam Bhaagyam” <span class="sanskrit-note">(Sanskrit atasözü)</span></p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/kübranurçoban10/" target="_blank">LinkedIn</a>
+            <!-- Diğer sosyal medya veya iletişim linkleri eklenebilir -->
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="about-section" id="about">
+      <h2>Hakkımda</h2>
+      <p>Merhaba! Ben Kübra Nur Çoban. Eczacılık alanında eğitim aldım ve sağlık sektöründe çalışmaktan büyük mutluluk duyuyorum. İnsanlara sağlık hizmeti sunmak, ilaç danışmanlığı yapmak ve sürekli öğrenmek benim için çok değerli.</p>
+    </section>
+    <section class="grid-section" id="experience">
+      <h2>Deneyim</h2>
+      <div class="grid">
+        <div class="card card-blue">
+          <h3>Serbest Eczacı</h3>
+          <p>2024 - Devam | Kübra Nur Çoban Eczanesi</p>
+          <p>Reçete danışmanlığı, ilaç temini, hasta bilgilendirme ve eczane yönetimi.</p>
+        </div>
+        <div class="card card-pink">
+          <h3>Stajyer Eczacı</h3>
+          <p>2022 - 2024 | Üniversite Uygulama Eczanesi</p>
+          <p>İlaç hazırlama, stok takibi, farmasötik danışmanlık.</p>
+        </div>
+      </div>
+    </section>
+    <section class="grid-section" id="education">
+      <h2>Eğitim</h2>
+      <div class="grid">
+        <div class="card card-mint">
+          <h3>İstanbul Üniversitesi</h3>
+          <p>Eczacılık Fakültesi (Lisans) | 2018 - 2024</p>
+        </div>
+        <div class="card card-yellow">
+          <h3>İstanbul Anadolu Lisesi</h3>
+          <p>2014 - 2018</p>
+        </div>
+      </div>
+    </section>
+    <section class="grid-section" id="skills">
+      <h2>Yetenekler</h2>
+      <div class="grid">
+        <div class="card card-lilac">
+          <h3>Reçete Değerlendirme</h3>
+        </div>
+        <div class="card card-green">
+          <h3>İlaç Danışmanlığı</h3>
+        </div>
+        <div class="card card-pink">
+          <h3>Stok ve Eczane Yönetimi</h3>
+        </div>
+        <div class="card card-blue">
+          <h3>Hasta İletişimi</h3>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section" id="contact">
+      <h2>İletişim</h2>
+      <form action="https://formspree.io/f/mgvljgoq" method="POST" id="contact-form">
+        <input type="text" name="name" placeholder="Adınız" required>
+        <input type="email" name="email" placeholder="E-posta" required>
+        <textarea name="message" placeholder="Mesajınız" required></textarea>
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit">Gönder</button>
+      </form>
+      <div id="form-message"></div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Kübra Nur Çoban | Eczacı Portföyü</p>
+  </footer>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById("form-message").textContent = "Mesajınız başarıyla gönderildi!";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (data.errors) {
+              document.getElementById("form-message").textContent = data.errors.map(e => e.message).join(", ");
+            } else {
+              document.getElementById("form-message").textContent = "Bir hata oluştu, lütfen tekrar deneyin.";
+            }
+          });
+        }
+      }).catch(() => {
+        document.getElementById("form-message").textContent = "Sunucuya ulaşılamadı.";
+      });
+    });
+  </script>
+</body>
+</html>
